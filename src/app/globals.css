@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .hero-section {
+        background-image: url('../assets/actionpage.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto;
+        width: 100%;
+      }
+      
+      @media (max-width: 640px) {
+        .hero-section {
+          background-image: none;
+          background: linear-gradient(to top, #ffcbc9ef, #f6f4fb);          
+        }
+      }
+
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      
+      @media (max-width: 1024px) {
+        .cards-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .cards-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      
+      /* Individual Cards */
+      .card {
+        position: relative;
+        background-color: #f9f8fc;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(46, 46, 46, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(46, 46, 46, 0.2);
+      }
+      
+      /* Content inside each card */
+      .content {
+        z-index: 1;
+        text-align: left;
+        padding: 20px 0;
+      }
+      
+      .content .heading {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        /* color: black; */
+      }
+      
+      .content .para {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      
+      /* Hover effect for cards */
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #6072C8;
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      
+      .card:hover::before {
+        opacity: 0.1;
+      }
+      
+      .tag{
+        @apply md:text-lg text-[#FC9E9C] inline-flex border border-[#222]/10 px-2 py-1 rounded-lg tracking-tight;
+      }
+
+      .harmony{
+        background-image: url('../assets/harmony-bg.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto;
+        width: 100%;
+      }
+
+      @media (max-width: 640px) {
+        .harmony {
+          background-image: none;
+        }
+      }
+
+      .header-head{
+        @apply text-center text-3xl md:text-left md:text-5xl py-2 font-bold tracking-tighter bg-gradient-to-b from-[#13275C] to-[#6072C8] text-transparent bg-clip-text mt-5;
+      }
+      
+      .gridNew{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .gridNew {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            align-items: center;
+            text-align: center;
+        }
+      }
+
+      .revCard {
+        @apply p-10 border border-[#222222]/10 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full; 
+      }
+
+      .para{
+        background-image: url('../assets/about-bg1.png');
+        background-size: cover;
+      }
+      .para2{
+        background-image: url('../assets/pngAbout.png');
+        background-size: cover;        
+      }
+
+      .schd-btn:hover{
+        
+        border-bottom: black 2px solid;
+      }
+}
