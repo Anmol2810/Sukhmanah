@@ -19,24 +19,16 @@ export const CallToAction = () => {
           <div className="tag">Start Your Journey</div>
           <h1 className="header-head text-center">Begin Your Path To Wellness</h1>
           <p className='text-[17px]'>We're here to support your mental wellness journey.<br/>Whether you have questions about our services or need guidance, feel free to connect with us via email, phone, or our contact form. Our compassionate team is ready to assist you and help you take the first step toward a healthier mind.</p>
-          <motion.img
-          src={leaf1.src}
-          alt='3d leaf 1'
-          width={150}
-          style={{
-            translateY,
-          }}
-          className='absolute -left-[110px] -top-[15px]'
-          />
-          <motion.img src={leaf2.src}
-          alt='3d leaf 2'
-          width={250}
-          style={{
-            translateY,
-            rotate: -30,
-          }}
-          className='absolute -right-[180px] top-[110px]'
-          />
+          <div className="absolute -left-[110px] -top-[15px]">
+            <motion.div style={{ translateY }}>
+              <Image src={leaf1} alt='3d leaf 1' width={150} />
+            </motion.div>
+          </div>
+          <div className="absolute -right-[180px] top-[110px]">
+            <motion.div style={{ translateY, rotate: -30 }}>
+              <Image src={leaf2} alt='3d leaf 2' width={250} />
+            </motion.div>
+          </div>
         </div>
         <div className="mt-5 gap-2 p-10 flex justify-center"><button className="bg-gradient-to-r md:text-[18px] from-[#13275C] to-[#0e1b3e] rounded-xl text-white text-[14px] font-semibold tracking-wide mx-5 p-3"><a target="_blank" href='https://wa.me/+91'>Contact Now</a></button><button className="inline-flex md:text-[18px] tracking-wide font-semibold items-center text-[14px]"><span className='schd-btn'>Schedule an Appointment</span><Image src={ArrowRight} alt="arrow" className = "w-7 h-5"/></button></div>
       </div>
