@@ -6,9 +6,9 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 export const CallToAction = () => {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: sectionRef as React.RefObject<HTMLElement>,
     offset: ["start end","end start"],
   });
   const translateY = useTransform(scrollYProgress, [0,1], [100, -150]);
