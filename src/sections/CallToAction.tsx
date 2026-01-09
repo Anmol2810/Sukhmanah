@@ -38,7 +38,7 @@ export const CallToAction = () => {
           className='absolute -right-[180px] top-[110px]'
           />
         </div>
-        <div className="mt-5 gap-2 p-10 flex justify-center"><button className="bg-gradient-to-r md:text-[18px] from-[#13275C] to-[#0e1b3e] rounded-xl text-white text-[14px] font-semibold tracking-wide mx-5 p-3"><a target="_blank" href='https://wa.me/+91'>Contact Now</a></button><button className="inline-flex md:text-[18px] tracking-wide font-semibold items-center text-[14px]"><span className='schd-btn'>Schedule an Appointment</span><ArrowRight className = "w-7 h-5"/></button></div>
+        <div className="mt-5 gap-2 p-10 flex justify-center"><button className="bg-gradient-to-r md:text-[18px] from-[#13275C] to-[#0e1b3e] rounded-xl text-white text-[14px] font-semibold tracking-wide mx-5 p-3"><a target="_blank" href='https://wa.me/+91'>Contact Now</a></button><button className="inline-flex md:text-[18px] tracking-wide font-semibold items-center text-[14px]"><span className='schd-btn'>Schedule an Appointment</span><Image src={ArrowRight} alt="arrow" className = "w-7 h-5"/></button></div>
       </div>
     </section>
   );

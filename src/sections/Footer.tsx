@@ -16,9 +16,9 @@ export const Footer = () => {
         <a href="">Contact</a>
       </nav>
       <div className="flex justify-center gap-5 mt-5">
-        <Insta/>
-        <LinkedIn/>
-        <Twitter/>
+        <Image src={Insta} alt="instagram" width={24} height={24}/>
+        <Image src={LinkedIn} alt="linkedin" width={24} height={24}/>
+        <Image src={Twitter} alt="twitter" width={24} height={24}/>
       </div>
       <p className="mt-6">&copy; 2025 Sukhmanah, Inc. All rights reserved.</p>
     </div>
