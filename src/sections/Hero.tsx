@@ -6,9 +6,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export const Hero = () => {
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
-    target: heroRef,
+    target: heroRef as unknown as React.RefObject<HTMLElement>,
     offset: ["start end","end start"],
   });
   const translateY = useTransform(scrollYProgress, [0,1], [-150, 200]);
@@ -28,21 +28,37 @@ export const Hero = () => {
           <p className="text-xl text-[#191B45] tracking-tight mt-5 lg:pr-3">Welcome to Sukhmanah, where we harmonize traditional healing practices with contemporary mental health approaches. Our mission is to foster happiness and comfort for your mind and spirit.</p>
           </div>
           <div className="flex">
-            <motion.img src = {cogImage.src} alt='3d model' className="block lg:h-[600px] w-[1500px]"
-            animate={{
-              translateY:[-10,10],
-            }}
-            transition={{
-              repeat: Infinity,
-              repeatType: "mirror",
-              duration: 4,
-              ease: "easeInOut",
-            }}
-            />
-            <motion.img src = {Leaf.src} alt="leaf" width={144} height={144} className="hidden lg:block absolute top-[580px] left-[1100px]"
-             style={{
-              translateY: translateY,
-             }}/> 
+            <motion.div
+              animate={{
+                translateY:[-10,10],
+              }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 4,
+                ease: "easeInOut",
+              }}
+            >
+              <Image 
+                src={cogImage} 
+                alt='3d model' 
+                className="block lg:h-[600px] w-[1500px]"
+              />
+            </motion.div>
+            <div className="hidden lg:block absolute top-[580px] left-[1100px]">
+              <motion.div
+                style={{
+                  translateY: translateY,
+                }}
+              >
+                <Image 
+                  src={Leaf} 
+                  alt="leaf" 
+                  width={144} 
+                  height={144}
+                />
+              </motion.div>
+            </div>
           </div>
       </div>
     </div>

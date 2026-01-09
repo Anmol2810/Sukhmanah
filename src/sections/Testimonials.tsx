@@ -15,55 +15,55 @@ import React from "react";
 const testimonials = [
   {
     text: "Sukhmanah helped me find peace during my toughest days. Their resources are life-changing!",
-    imageSrc: avatar1.src,
+    imageSrc: avatar1,
     name: "Raavi M.",
     username: "@raavihere",
   },
   {
     text: "I've never felt more understood and supported. Sukhmanah is a haven for mental wellness.",
-    imageSrc: avatar2.src,
+    imageSrc: avatar2,
     name: "Josh Kumar",
     username: "@jkofficial",
   },
   {
     text: "Sukhmanah gave me tools to manage my anxiety better. I can't thank them enough!",
-    imageSrc: avatar3.src,
+    imageSrc: avatar3,
     name: "Arjun Raj",
     username: "@itsarjunnn",
   },
   {
     text: "From meditation guides to stress-relief tips, Sukhmanah has everything I need for a calmer mind",
-    imageSrc: avatar4.src,
+    imageSrc: avatar4,
     name: "Nikhil Ramakrishnan",
     username: "@nikhilonmusic",
   },
   {
     text: "he personalized plans on Sukhmanah work wonders. It's like having a personal therapist online!",
-    imageSrc: avatar5.src,
+    imageSrc: avatar5,
     name: "Vikram lizo",
     username: "@lizoVikram",
   },
   {
     text: "The guided exercises and advice on Sukhmanah have transformed my daily mindset. I feel so much lighter!",
-    imageSrc: avatar6.src,
+    imageSrc: avatar6,
     name: "Anjali T.",
     username: "@unburned",
   },
   {
     text: "Thanks to Sukhmanah, I've learned to prioritize my well-being. It's more than a website—it's a lifeline.",
-    imageSrc: avatar7.src,
+    imageSrc: avatar7,
     name: "Jai Patel",
     username: "@jpatelsdesign",
   },
   {
     text: "Sukhmanah made self-care easy and approachable. I feel more in control of my emotions now.",
-    imageSrc: avatar8.src,
+    imageSrc: avatar8,
     name: "Simran Kaur",
     username: "@siiimran",
   },
   {
     text: "Sukhmanah's blogs and expert advice have been my go-to for mental health support. Highly recommended!",
-    imageSrc: avatar9.src,
+    imageSrc: avatar9,
     name: "Ritik Sharma",
     username: "@iamritik",
   },
@@ -74,7 +74,7 @@ const secondCol = testimonials.slice(3, 6);
 const thirdCol = testimonials.slice(6, 9);
 
 const TestimonialsColumn = (props: { className?: string; testimonials: typeof testimonials; duration?: number }) => (
-  <div className={props.className}>
+  <div className={twMerge("flex flex-col gap-6 pb-6", props.className)}>
   <motion.div animate={{
     translateY: "-50%",
   }} transition={{
@@ -82,8 +82,8 @@ const TestimonialsColumn = (props: { className?: string; testimonials: typeof te
     repeat: Infinity,
     ease: "linear",
     repeatType: "loop",
-  }} 
-  className="flex flex-col gap-6 pb-6">
+  }}
+  >
     {[...new Array(2)].fill(0).map((_, index)=>(
       <React.Fragment key={index}>
         {props.testimonials.map(({ text, imageSrc, name, username }) => (
